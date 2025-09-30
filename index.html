@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Items Store - Pricelist</title>
+    <title>PVB Store - Pricelist</title>
     <style>
         * {
             margin: 0;
@@ -39,6 +39,29 @@
         header p {
             font-size: 1.2em;
             opacity: 0.9;
+        }
+
+        .join-server-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .join-server-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+        }
+
+        .join-server-btn:active {
+            transform: scale(0.98);
         }
 
         .items-grid {
@@ -100,8 +123,8 @@
 
         .item-footer {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 15px;
             margin-top: 20px;
         }
 
@@ -109,20 +132,37 @@
             font-size: 1.8em;
             font-weight: bold;
             color: #667eea;
+            text-align: center;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            width: 100%;
         }
 
         .buy-button {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 12px 30px;
+            padding: 12px 20px;
             border-radius: 25px;
-            font-size: 1em;
+            font-size: 0.95em;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            flex: 1;
+            text-align: center;
+        }
+
+        .buy-button.whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
+        .buy-button.telegram {
+            background: linear-gradient(135deg, #0088cc 0%, #0077b5 100%);
         }
 
         .buy-button:hover {
@@ -207,8 +247,9 @@
 <body>
     <div class="container">
         <header>
-            <h1>🎮 Roblox Items Store</h1>
-            <p>Koleksi Item Game Roblox Terbaik</p>
+            <h1>🎮 PVB Store</h1>
+            <p>Koleksi Item PVB Terbaik</p>
+            <a href="https://www.roblox.com/share?code=610f9644048f5746bb3547299c7db23c&type=Server" target="_blank" class="join-server-btn">🎯 JOIN PRIVATE SERVER</a>
         </header>
 
         <div class="items-grid" id="itemsGrid">
@@ -225,46 +266,32 @@
         // Data items - kamu bisa edit ini sesuai dengan item yang kamu jual
         const items = [
             {
-                name: "Dominus Empyreus",
-                description: "Item legendaris dengan desain elegan dan eksklusif. Cocok untuk koleksi premium kamu!",
-                price: "Rp 150.000",
+                name: "Dragon Cannelloni (gold)",
+                description: "Dragon dengan mutasi gold, stok tersisa 50+",
+                price: "Rp 10.000",
                 image: "🎩",
-                imageUrl: "" // Kosongkan jika ingin pakai emoji, atau isi dengan URL gambar
+                imageUrl: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/09/best-brainrots-in-plants-vs-brainrots-1.jpg?q=49&fit=crop&w=825&dpr=2" // Kosongkan jika ingin pakai emoji, atau isi dengan URL gambar
             },
             {
-                name: "Valkyrie Helm",
-                description: "Helm ikonik yang sangat dicari. Tingkatkan penampilan avatar kamu dengan item ini!",
-                price: "Rp 85.000",
+                name: "Dragon Cannelloni (rainbow)",
+                description: "Dragon dengan mutasi gold, stok tersisa 10+",
+                price: "Rp 20.000",
                 image: "⚔️",
-                imageUrl: ""
+                imageUrl: "Dragon Cannelloni (gold)"
             },
             {
-                name: "Rainbow Wings",
-                description: "Sayap warna-warni yang menawan. Buat avatar kamu terbang dengan gaya!",
-                price: "Rp 65.000",
+                name: "All Secret Brainrots",
+                description: "Brainrot tier secret,stock 100+",
+                price: "Rp 5.000",
                 image: "🌈",
-                imageUrl: ""
+                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYcN54zDISh6AJvVARIPeiHYt6WBOiM4yGfA&s"
             },
             {
-                name: "Golden Crown",
-                description: "Mahkota emas yang mewah. Tunjukkan status royal kamu di game!",
-                price: "Rp 120.000",
+                name: "MR CARROT (plants)",
+                description: "Mr carrot damage 3.5k - 5k, stock 20+",
+                price: "Rp 5.000",
                 image: "👑",
-                imageUrl: ""
-            },
-            {
-                name: "Shadow Blade",
-                description: "Pedang gelap yang misterius. Sempurna untuk warrior sejati!",
-                price: "Rp 95.000",
-                image: "🗡️",
-                imageUrl: ""
-            },
-            {
-                name: "Crystal Staff",
-                description: "Tongkat kristal dengan kekuatan magis. Item wajib untuk mage players!",
-                price: "Rp 110.000",
-                image: "🔮",
-                imageUrl: ""
+                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpGLmqU4410YHm4-yc2Ral43GguDnl2j1yCg&s"
             }
         ];
 
@@ -288,7 +315,10 @@
                     <div class="item-description">${item.description}</div>
                     <div class="item-footer">
                         <div class="item-price">${item.price}</div>
-                        <a href="https://t.me/ngeselinsih" target="_blank" class="buy-button">Beli Sekarang</a>
+                        <div class="button-group">
+                            <a href="https://wa.me/62882005903695?text=Halo,%20saya%20ingin%20order%20${encodeURIComponent(item.name)}" target="_blank" class="buy-button whatsapp">📱 WhatsApp</a>
+                            <a href="https://t.me/ngeselinsih" target="_blank" class="buy-button telegram">✈️ Telegram</a>
+                        </div>
                     </div>
                 </div>
             `;
