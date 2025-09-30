@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Items Store - Pricelist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .item-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.6s ease;
+            animation-fill-mode: both;
+        }
+
+        .item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .item-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+        }
+
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-content {
+            padding: 25px;
+        }
+
+        .item-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .item-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+
+        .item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .item-price {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .buy-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .buy-button:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            font-size: 1.1em;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .item-card:nth-child(1) { animation-delay: 0.1s; }
+        .item-card:nth-child(2) { animation-delay: 0.2s; }
+        .item-card:nth-child(3) { animation-delay: 0.3s; }
+        .item-card:nth-child(4) { animation-delay: 0.4s; }
+        .item-card:nth-child(5) { animation-delay: 0.5s; }
+        .item-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .items-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .item-footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .buy-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Roblox Items Store</h1>
+            <p>Koleksi Item Game Roblox Terbaik</p>
+        </header>
+
+        <div class="items-grid" id="itemsGrid">
+            <!-- Item cards akan ditambahkan di sini -->
+        </div>
+
+        <footer>
+            <p>Untuk pembelian, hubungi kami di <a href="https://t.me/ngeselinsih" target="_blank">Telegram</a></p>
+            <p style="margin-top: 10px; opacity: 0.8;">💬 Fast Response | ✅ Trusted Seller</p>
+        </footer>
+    </div>
+
+    <script>
+        // Data items - kamu bisa edit ini sesuai dengan item yang kamu jual
+        const items = [
+            {
+                name: "Dominus Empyreus",
+                description: "Item legendaris dengan desain elegan dan eksklusif. Cocok untuk koleksi premium kamu!",
+                price: "Rp 150.000",
+                image: "🎩",
+                imageUrl: "" // Kosongkan jika ingin pakai emoji, atau isi dengan URL gambar
+            },
+            {
+                name: "Valkyrie Helm",
+                description: "Helm ikonik yang sangat dicari. Tingkatkan penampilan avatar kamu dengan item ini!",
+                price: "Rp 85.000",
+                image: "⚔️",
+                imageUrl: ""
+            },
+            {
+                name: "Rainbow Wings",
+                description: "Sayap warna-warni yang menawan. Buat avatar kamu terbang dengan gaya!",
+                price: "Rp 65.000",
+                image: "🌈",
+                imageUrl: ""
+            },
+            {
+                name: "Golden Crown",
+                description: "Mahkota emas yang mewah. Tunjukkan status royal kamu di game!",
+                price: "Rp 120.000",
+                image: "👑",
+                imageUrl: ""
+            },
+            {
+                name: "Shadow Blade",
+                description: "Pedang gelap yang misterius. Sempurna untuk warrior sejati!",
+                price: "Rp 95.000",
+                image: "🗡️",
+                imageUrl: ""
+            },
+            {
+                name: "Crystal Staff",
+                description: "Tongkat kristal dengan kekuatan magis. Item wajib untuk mage players!",
+                price: "Rp 110.000",
+                image: "🔮",
+                imageUrl: ""
+            }
+        ];
+
+        // Render items
+        const itemsGrid = document.getElementById('itemsGrid');
+        
+        items.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'item-card';
+            
+            const imageContent = item.imageUrl 
+                ? `<img src="${item.imageUrl}" alt="${item.name}">`
+                : item.image;
+            
+            card.innerHTML = `
+                <div class="item-image">
+                    ${imageContent}
+                </div>
+                <div class="item-content">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-description">${item.description}</div>
+                    <div class="item-footer">
+                        <div class="item-price">${item.price}</div>
+                        <a href="https://t.me/ngeselinsih" target="_blank" class="buy-button">Beli Sekarang</a>
+                    </div>
+                </div>
+            `;
+            
+            itemsGrid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
